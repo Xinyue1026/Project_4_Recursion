@@ -95,7 +95,8 @@ def group_sum_5(start, nums, target):
         if start + 1 < len(nums) and nums[start + 1] == 1:
             return group_sum_5(start + 2, nums, target - nums[start])
         return group_sum_5(start + 1, nums, target - nums[start])
-    return group_sum_5(start + 1, nums, target - nums[start]) or group_sum_5(start + 1, nums, target)
+    return (group_sum_5(start + 1, nums, target - nums[start]) or
+                group_sum_5(start + 1, nums, target))
 
 
 def group_sum_clump(start, nums, target):
